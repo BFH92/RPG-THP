@@ -6,14 +6,16 @@ class Turn {
   console.log(`Turn number ${10 - gameNew.turnLeft}`);
   
   
+  players.map(player =>{
+    console.log(` ${player.name} : point de vie => ${player.hp}`)
+  }
+  )
   players.map(player =>
     console.log(`Pour attaquer ${player.name} tape : ${players.indexOf(player)}`)
-  )
 
+  )
   
   this.switchPlayer()
-
-  console.log(players)
 
 }
 
@@ -42,6 +44,11 @@ class Turn {
       alert("Le numéro de joueur est incorrect")
       this.attack()
     }
+
+    players.map(player =>{
+      console.log(` ${player.name} : point de vie => ${player.hp}`)
+    }
+    )
   }
 
   

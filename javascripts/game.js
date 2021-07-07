@@ -5,15 +5,16 @@ class Game {
   }
 
   newTurn() {
-    this.turnLeft = this.turnLeft - 1;
+  //  this.turnLeft = this.turnLeft - 1;
 
-  if (this.turnLeft >= 0) {
-      const newTurn = new Turn;
+  //if (this.turnLeft >= 0) {
+    console.log(players.hp)
+     const newTurn = new Turn;
       newTurn.startTurn();
-      this.newTurn();
-    } else {
-      console.log("Game Over")
-  }
+  //    this.newTurn();
+  //  } else {
+  //    console.log("Game Over")
+  //}
   }
 
 }
