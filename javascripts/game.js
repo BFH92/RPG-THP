@@ -5,9 +5,9 @@ class Game {
 
   newTurn() {
     this.turnLeft = this.turnLeft - 1;
-    if (this.turnLeft > 0) {
+    if (this.turnLeft >= 0) {
+      console.log(`Turn number ${10 - this.turnLeft}`)
       this.newTurn()
-      console.log(`New turn ${this.turnLeft}`)
     } else {
       console.log("Game Over")
     }
@@ -24,4 +24,4 @@ console.log(grace,ulder)
 
 const gameNew = new Game
 gameNew.newTurn()
-console.log(gameNew)
+//console.log(gameNew)
