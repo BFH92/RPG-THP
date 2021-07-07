@@ -10,46 +10,22 @@ class Turn {
     console.log(` ${player.name} : point de vie => ${player.hp}`)
   }
   )
-  players.map(player =>
+  players.map(player =>{
     console.log(`Pour attaquer ${player.name} tape : ${players.indexOf(player)}`)
-
+    
+    player.attackOf(player)
+  }
   )
   
-  this.switchPlayer()
+  //this.switchPlayer()
 
 }
 
-  switchPlayer(){
-    this.attack()
-  }
+  //switchPlayer(){
+  //  this.attack()
+  //}
 
-  attack(){
-    console.log(`${playerSelected.name} joue`);
-    console.log(players.indexOf(playerSelected))
-    var input = Number(prompt("quel joueur veux-tu attaquer ?"));
-    
-    if (input.lenght == 0){
-      alert("Le numéro de joueur ne peut être vide")
-      this.attack()
-    }
-    else if (input === players.indexOf(playerSelected)){
-      alert("Le numéro de joueur est incorrect")
-      this.attack()
-    }
-    else if (players[input]){
-      (playerSelected.dealDamage(players[input]))
-     }
-    
-    else {
-      alert("Le numéro de joueur est incorrect")
-      this.attack()
-    }
-
-    players.map(player =>{
-      console.log(` ${player.name} : point de vie => ${player.hp}`)
-    }
-    )
-  }
+  
 
   
 }

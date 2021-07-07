@@ -21,4 +21,32 @@ class Character {
     //   this.mana = this.mana + 20;
     // }
   }
+
+  attackOf(player){
+    console.log(`${player.name} joue`);
+    console.log(players.indexOf(player))
+    var input = Number(prompt("quel joueur veux-tu attaquer ?"));
+    
+    if (input.lenght == 0){
+      alert("Le numéro de joueur ne peut être vide")
+      this.attack()
+    }
+    else if (input === players.indexOf(player)){
+      alert("Le numéro de joueur est incorrect")
+      this.attack()
+    }
+    else if (players[input]){
+      (player.dealDamage(players[input]))
+     }
+    
+    else {
+      alert("Le numéro de joueur est incorrect")
+      this.attack()
+    }
+
+    players.map(player =>{
+      console.log(` ${player.name} : point de vie => ${player.hp}`)
+    }
+    )
+  }
 }

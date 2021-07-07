@@ -25,8 +25,8 @@ const ulder = new Paladin("ulder");
 const players = [grace,ulder];
 const gameNew = new Game;
 
-var rand = Math.floor(Math.random()*players.length);
-var playerSelected = players[rand];
+//var rand = Math.floor(Math.random()*players.length);
+//var playerSelected = players[rand];
 
 gameNew.newTurn()
 
