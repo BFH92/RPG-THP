@@ -1,9 +1,11 @@
 class Character {
-  constructor(hp, dmg, mana, status = "playing") {
+  constructor(name, hp, dmg, mana, status = "playing") {
+    this.name = name;
     this.hp = hp;
     this.dmg = dmg;
     this.mana = mana;
     this.status =status;
+    
   }
 
   takeDamage(dmgReceived) {
