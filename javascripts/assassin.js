@@ -4,8 +4,11 @@ class Assassin extends Character {
   }
   
   shadowHit(victim) {
-    victim.hp = victim.hp - 7;
-    if (victim.hp > 0) {
+    let currentTurn = gameNew.turnLeft;
+    if (victim.hp <= 7) {
+      victim.hp = victim.hp - 7;
+    } else {
+      victim.hp = victim.hp - 7;
       this.hp = this.hp - 7;
     }
     this.mana = this.mana - 20;

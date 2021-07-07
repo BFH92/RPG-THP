@@ -4,9 +4,10 @@ class Fighter extends Character {
   }
 
   darkVision(victim) {
+    let currentTurn = gameNew.turnLeft;
     victim.hp = victim.hp - 5;
     this.mana = this.mana - 20;
-    
+
   }
 }
 
