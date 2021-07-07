@@ -26,15 +26,17 @@ class Character {
     console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme input par le nom du joueur
     var input = Number(prompt("quel joueur veux-tu attaquer ?"));
 
+    this.validInput(input, player);
+  }
+
+  validInput(input, player) {
     if (input.lenght == 0) {
       alert("Le numéro de joueur ne peut être vide");
       this.attackOf(player);
     } else if (input === players.indexOf(player)) {
       alert("Le joueur ne peut pas s'attaquer soi-même !");
       this.attackOf(player);
-    }
-    // si joueur correspondant à l'input est mort => relance de this.AttackOf()
-    else if (players[input].hp <= 0) {
+    } else if (players[input].hp <= 0) {
       alert("Le joueur est déjà mort.. ");
       this.attackOf(player);
     } else if (players[input]) {
