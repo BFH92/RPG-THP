@@ -32,9 +32,7 @@ class Character {
     } else if (input === players.indexOf(player)) {
       alert("Le joueur ne peut pas s'attaquer soi-même !");
       this.attackOf(player);
-    }
-    // si joueur correspondant à l'input est mort => relance de this.AttackOf()
-    else if (players[input].hp <= 0) {
+    } else if (players[input].hp <= 0) {
       alert("Le joueur est déjà mort.. ");
       this.attackOf(player);
     } else if (players[input]) {
