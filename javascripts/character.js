@@ -21,15 +21,38 @@ class Character {
     // }
   }
 
+  specialAttack(player, input) {
+    if (player instanceof Assassin) {
+      player.shadowHit(players[input]);
+    } else if (player instanceof Berserker) {
+      player.rage();
+    } else if (player instanceof Fighter) {
+      player.darkVision(players[input]);
+    } else if (player instanceof Monk) {
+      player.heal();
+    } else if (player instanceof Paladin) {
+      player.healingLighting(players[input]);
+    }
+  }
+
   attackOf(player) {
     console.log(`${player.name} joue`);
     console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme inout par le nom du joueur
     var input = Number(prompt("quel joueur veux-tu attaquer ?"));
 
-    if (this.validInput(input, player)){
-      player.dealDamage(players[input]);
+    if (this.validInput(input, player)) {
+      var attackInput = prompt("quelle attaque veux-tu faire ?");
+      console.log("0 = attaque classique")
+      console.log("1 = attaque spéciale")
+      if (attackInput == 0) {
+        player.dealDamage(players[input]);
+      } else if (attackInput == 1) {
+        this.specialAttack(player, input);
+      } else {
+        console.log("cette attaque n'est pas reconnue");
+        this.validInput(input, player);
+      }
     }
-
   }
 
   validInput(input, player) {
