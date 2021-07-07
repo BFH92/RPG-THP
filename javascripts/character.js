@@ -23,7 +23,7 @@ class Character {
 
   attackOf(player) {
     console.log(`${player.name} joue`);
-    console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme inout par le nom du joueur
+    console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme input par le nom du joueur
     var input = Number(prompt("quel joueur veux-tu attaquer ?"));
 
     if (input.lenght == 0) {
