@@ -6,6 +6,7 @@ class Fighter extends Character {
   darkVision(victim) {
     victim.hp = victim.hp - 5;
     this.mana = this.mana - 20;
+    
   }
 }
 
