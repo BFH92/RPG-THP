@@ -26,6 +26,10 @@ class Character {
     console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme inout par le nom du joueur
     var input = Number(prompt("quel joueur veux-tu attaquer ?"));
 
+    this.validInput(input, player);
+  }
+
+  validInput(input, player) {
     if (input.lenght == 0) {
       alert("Le numéro de joueur ne peut être vide");
       this.attackOf(player);
