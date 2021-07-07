@@ -1,28 +1,28 @@
 class Game {
-  constructor(turnLeft = 10) {
+  constructor(turnLeft = 2) {
     this.turnLeft = turnLeft;
 
   }
 
   newTurn() {
-  //  this.turnLeft = this.turnLeft - 1;
+  this.turnLeft = this.turnLeft - 1;
 
-  //if (this.turnLeft >= 0) {
+  if (this.turnLeft >= 0) {
     console.log(players.hp)
-     const newTurn = new Turn;
-      newTurn.startTurn();
-  //    this.newTurn();
-  //  } else {
-  //    console.log("Game Over")
-  //}
+    const newTurn = new Turn;
+    newTurn.startTurn();
+    this.newTurn();
+  } else {
+      console.log("Game Over")
+  }
   }
 
 }
 
 const grace = new Fighter("grace");
 const ulder = new Paladin("ulder");
-
-const players = [grace,ulder];
+const albert = new Paladin("albert");
+const players = [grace,ulder,albert];
 const gameNew = new Game;
 
 //var rand = Math.floor(Math.random()*players.length);

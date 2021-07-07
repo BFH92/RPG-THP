@@ -23,17 +23,17 @@ class Character {
   }
 
   attackOf(player){
-    console.log(`${player.name} joue`);
-    console.log(players.indexOf(player))
+    console.log(`${player.name} joue`); 
+    console.log(players.indexOf(player))//FIXME: voir comment remplacer l'index du joueur comme inout par le nom du joueur
     var input = Number(prompt("quel joueur veux-tu attaquer ?"));
     
     if (input.lenght == 0){
       alert("Le numéro de joueur ne peut être vide")
-      this.attack()
+      this.attackOf(player)
     }
     else if (input === players.indexOf(player)){
       alert("Le numéro de joueur est incorrect")
-      this.attack()
+      this.attackOf(player)
     }
     else if (players[input]){
       (player.dealDamage(players[input]))
@@ -41,12 +41,9 @@ class Character {
     
     else {
       alert("Le numéro de joueur est incorrect")
-      this.attack()
+      this.attackOf(player)
     }
 
-    players.map(player =>{
-      console.log(` ${player.name} : point de vie => ${player.hp}`)
-    }
-    )
+  
   }
 }
