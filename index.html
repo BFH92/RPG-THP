@@ -4,9 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
     <title>RPG—THP</title>
 </head>
+
 <body>
+
+    <div class="container">
+
+        <header>
+            <h1>THP—RPG</h1>
+        </header>  
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2>Assassin</h2>
+                <h4>Hp = 6</h4>
+                <h4>Damage = 6</h4>
+                <h4>Mana = 20</h4>
+                <h4>Special attack:</h4>
+                <p>L'Assassin aura une attaque spéciale Shadow hit lui permettant de ne pas prendre de dégâts lors du prochain tour. Il portera alors une attaque spéciale infligeant 7 dégâts puis, si l'adversaire n'est pas mort, l'assassin perdra 7 dégâts à son tour. Cette attaque coûte 20 mana.</p>
+            </div>
+
+            <div class="card">
+                <h2>Berserker</h2>
+                <h4>Hp = 8</h4>
+                <h4>Damage = 4</h4>
+                <h4>Mana = 0</h4>
+                <h4>Special attack:</h4>
+                <p>Le Berzerker aura une attaque spéciale Rage lui donnant +1 pour ses attaques pour tout le reste de la partie mais lui enlevant 1 hp. Elle coûte 0 mana. Elle peut être appelée plusieurs fois (par exemple, si le Berzerker a fait son attaque spéciale 2 fois, ses attaques infligeront 4 + 2 = 6 points de dégât).</p>
+            </div>
+
+            <div class="card">
+                <h2>Fighter</h2>
+                <h4>Hp = 12</h4>
+                <h4>Damage = 4</h4>
+                <h4>Mana = 40</h4>
+                <h4>Special attack:</h4>
+                <p>Le Fighter aura une attaque spéciale Dark Vision, infligeant 5 dégâts. Jusqu'au prochain tour, il prendra 2 dégâts de moins par coup reçu. Elle coute 20 mana.</p>
+            </div>
+
+            <div class="card">
+                <h2>Monk</h2>
+                <h4>Hp = 8</h4>
+                <h4>Damage = 2</h4>
+                <h4>Mana = 200</h4>
+                <h4>Special attack:</h4>
+                <p>Le Monk, quand a lui, aura une attaque spéciale heal rendant 8 PV. Elle coute 25 mana.</p>
+            </div>
+
+            <div class="card">
+                <h2>Paladin</h2>
+                <h4>Hp = 16</h4>
+                <h4>Damage = 3</h4>
+                <h4>Mana = 160</h4>
+                <h4>Special attack:</h4>
+                <p>Le Paladin aura une attaque spéciale Healing Lighting, infligeant 4 dégâts et le soignant de 5. Elle coute 40 mana.</p>
+            </div>
+
+            <div class="card">
+                <h2>Wizard</h2>
+                <h4>Hp = 10</h4>
+                <h4>Damage = 2</h4>
+                <h4>Mana = 200</h4>
+                <h4>Special attack:</h4>
+                <p>Le wizard a une attaque spéciale Fireball qui inflige 7 points de dégât et qui coûte 25 points de mana.</p>
+            </div>
+
+        </div>
+
+        <footer>
+            <ul>
+                <li><a href="https://github.com/BFH92" target="blank">Benoit Figea</a></li>
+                <li><a href="https://github.com/shanksthered" target="blank">Cheikh Kebe</a></li>
+                <li><a href="https://github.com/benitodotcool" target="blank">Valentin Bousquet</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+
     <script src="javascripts/character.js"></script>
     <script src="javascripts/assassin.js"></script>
     <script src="javascripts/wizard.js"></script>
@@ -17,4 +98,5 @@
     <script src="javascripts/turn.js"></script>
     <script src="javascripts/game.js"></script>
 </body>
+
 </html>
