@@ -26,11 +26,11 @@ class Game {
         players.filter((player) => {
           if (player.status == "playing") {
             player.status = "winner";
-            console.log(`winner :${player.name}`);
+            console.log(`%cWinner: ${(player.name).toUpperCase()}!`,"font-size:20px;font-weight:600;color:lime;");
           }
-        });
-      }
-    } else {
+          });
+        }
+    } else {      
       console.log("Game Over");
       var playerByHp = players.sort((a, b) => {
         return b.hp - a.hp;
@@ -38,21 +38,22 @@ class Game {
 
       playerByHp.filter((player) => {
         if (playerByHp.indexOf(player) == 0) {
-          player.status = "winner";
-          console.log(`winner : ${player.name}`);
-        } else {
-          player.status = "loser";
+          player.status = "winner"
+          console.log(`%cWinner: ${(player.name).toUpperCase()}!`,"font-size:20px;font-weight:600;color:lime;");
+        }else{
+          player.status = "loser"
         }
       });
     }
   }
 }
 
-const grace = new Monk("grace");
-const ulder = new Monk("ulder");
-const albert = new Paladin("albert");
-const players = [grace, ulder, albert];
+const grace = new Fighter("grace");
+const ulder = new Wizard("Assassin2");
+const albert = new Assassin("assassin");
+const players = [grace, ulder,albert];
 const gameNew = new Game();
+console.log("%cLet's the game begin!","font-size:20px;font-weight:600;color:blue;");
 var shuffle = players.sort(function (a, b) {
   return 0.5 - Math.random();
 });
@@ -60,11 +61,3 @@ var shuffle = players.sort(function (a, b) {
 //var playerSelected = players[rand];
 
 gameNew.newTurn();
-
-//const moana = new Monk("moana");
-//const draven = new Berserker();
-//const carl = new Assassin();
-
-console.log(players);
-
-//console.log(gameNew)

@@ -1,5 +1,5 @@
 class Assassin extends Character {
-  constructor(name, hp = 20, dmg = 6, mana = 20, status, activeDefense = 0,activeAttack=0, target=0) {
+  constructor(name, hp = 20, dmg = 20, mana = 20, status, activeDefense = 0,activeAttack=0, target=0) {
     super(name, hp, dmg, mana, status);
     this.activeDefense = activeDefense;
     this.activeAttack = activeAttack;
@@ -20,10 +20,13 @@ class Assassin extends Character {
   
   attackSpe(victim) {
     console.log(`${this.name} ATTAQUE ${victim.name} EN TRAITRE !`)
+    
+    if(victim.activeDefense == gameNew.turnLeft){
+      victim.benefits(7)
+    }else{
       victim.takeDamage(7);
-      if(victim.activeDefense !=0){
-        victim.benefits()
-      }
+    }
+      
     if (victim.hp >0) {
       this.takeDamage(7);
       console.log(`${this.name} a ÉCHOUÉ dans son ASSASSINAT, il perd 7 points de vie`)

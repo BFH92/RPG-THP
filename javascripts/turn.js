@@ -1,7 +1,17 @@
 class Turn {
   start() {
-    console.log("let's play!");
-    console.log(`Turn number ${10 - gameNew.turnLeft}`);
+    console.log(`%c=> TURN N°${10 - gameNew.turnLeft}`, "font-size:14px;font-weight:600;");
+
+    players.map(player => {
+      console.log(
+        `%c${(player.name).toUpperCase()}:
+        Health: ${player.hp},
+        Damage: ${player.dmg},
+        Mana:   ${player.mana},
+        Status: ${player.status}.`,
+        "color: purple"      
+      );
+    });
 
     players.map((player) => {
       console.log(` ${player.name} : point de vie => ${player.hp}, status => ${player.status}, mana => ${player.mana}`);
@@ -26,5 +36,4 @@ class Turn {
 
     
   }
-  
 }
