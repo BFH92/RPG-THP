@@ -49,7 +49,7 @@ class Game {
 }
 
 const grace = new Fighter("grace");
-const ulder = new Assassin("Assassin2");
+const ulder = new Wizard("Assassin2");
 const albert = new Assassin("assassin");
 const players = [grace, ulder,albert];
 const gameNew = new Game();

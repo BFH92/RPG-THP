@@ -8,7 +8,7 @@ class Character {
   }
 
   takeDamage(dmgReceived) {
-    if (dmgReceived >0){
+    if (dmgReceived > 0) {
       this.hp = this.hp - dmgReceived;
     }
     if (this.hp <= 0) {
@@ -28,7 +28,7 @@ class Character {
       )
     }    
   }
-  
+
   specialAttack(player, input) {
     if (player instanceof Assassin) {
       player.shadowHit(players[input]);
@@ -40,6 +40,8 @@ class Character {
       player.heal();
     } else if (player instanceof Paladin) {
       player.healingLighting(players[input]);
+    } else if (player instanceof Wizard) {
+      player.fireball(players[input]);
     }
   }
 
