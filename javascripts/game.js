@@ -19,8 +19,7 @@ class Game {
           }
           });
         }
-    } else {
-      
+    } else {      
       console.log("Game Over");
         var playerByHp = players.sort((a, b) => {
           return b.hp - a.hp;
