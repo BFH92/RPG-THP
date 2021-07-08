@@ -16,10 +16,16 @@ class Character {
 
   dealDamage(victim) {
     victim.takeDamage(this.dmg);
+    if(victim.activeDefense !=0){
+      victim.benefits()
+    }
+  }
+
+
+    
     // if (victim.hp <= 0) {
     //   this.mana = this.mana + 20;
     // }
-  }
 
   specialAttack(player, input) {
     if (player instanceof Assassin) {
@@ -49,8 +55,8 @@ class Character {
       } else if (attackInput == 1) {
         this.specialAttack(player, input);
       } else {
-        console.log("cette attaque n'est pas reconnue");
-        this.validInput(input, player);
+        alert("cette attaque n'est pas reconnue");
+        this.attackOf(player);
       }
     }
   }

@@ -5,7 +5,7 @@ class Berserker extends Character {
   
   rage() {
     this.dmg = this.dmg + 1
-    this.hp = this.hp - 1
+    this.takeDamage(1)
   }
 }
 
