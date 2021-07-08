@@ -13,8 +13,8 @@ class Game {
         //console.log(` ${player.name} : status => ${player.status}`);
         if (gameNew.turnLeft == player.activeAttack){
         let victim = players[player.target]
-        player.murder(victim)
-        console.log("ASSSASSIN ATTACK")
+        player.attackSpe(victim)
+        
         }
       });
       if (players.filter((player) => player.status == "playing").length > 1) {

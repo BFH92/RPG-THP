@@ -10,9 +10,10 @@ class Fighter extends Character {
     this.mana = this.mana - 20;
   }
 
-  benefits() {
+  benefits(dmg) {
     if (gameNew.turnLeft == this.activeDefense){
-      this.hp = this.hp +2
+      this.takeDamage(dmg-2);
+      
     }
   }
 }

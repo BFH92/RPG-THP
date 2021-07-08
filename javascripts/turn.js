@@ -3,8 +3,6 @@ class Turn {
     console.log("let's play!");
     console.log(`Turn number ${10 - gameNew.turnLeft}`);
 
-    
-
     shuffle.map((player) => {
       if (player.hp > 0) {
         shuffle.map((player) =>
@@ -22,15 +20,7 @@ class Turn {
       }
     });
 
-    players.map((player) => {
-      console.log(` ${player.name} : point de vie => ${player.hp}`);
-      console.log(` ${player.name} : status => ${player.status}`);
-      if (gameNew.turnLeft == player.activeAttack){
-      let victim = players[player.target]
-      player.murder(victim)
-      console.log("ASSSASSIN ATTACK")
-      }
-    });
+    
   }
   
 }

@@ -15,10 +15,13 @@ class Character {
   }
 
   dealDamage(victim) {
-    victim.takeDamage(this.dmg);
     if(victim.activeDefense !=0){
-      victim.benefits()
+      victim.benefits(this.dmg)
+    }else{
+      victim.takeDamage(this.dmg);
     }
+  
+    
   }
 
 

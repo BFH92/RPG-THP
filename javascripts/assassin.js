@@ -1,5 +1,5 @@
 class Assassin extends Character {
-  constructor(name, hp = 6, dmg = 6, mana = 20, status, activeDefense = 0,activeAttack=0, target=0) {
+  constructor(name, hp = 20, dmg = 6, mana = 20, status, activeDefense = 0,activeAttack=0, target=0) {
     super(name, hp, dmg, mana, status);
     this.activeDefense = activeDefense;
     this.activeAttack = activeAttack;
@@ -13,13 +13,12 @@ class Assassin extends Character {
     this.mana = this.mana - 20;
   }
 
-  benefits(){
-    this.hp = this.hp
-    this.takeDamage(0)
-    return
+  benefits(dmg){
+    this.takeDamage(dmg-dmg)
+    alert(`${this.name} a une immunité pour ce tour ! `)
   }
   
-  murder(victim) {
+  attackSpe(victim) {
     console.log(`${this.name} ATTAQUE ${victim.name} EN TRAITRE !`)
       victim.takeDamage(7);
       if(victim.activeDefense !=0){
@@ -27,7 +26,7 @@ class Assassin extends Character {
       }
     if (victim.hp >0) {
       this.takeDamage(7);
-      console.log(`${this.name} a ÉCHOUÉ dans son ASSASSINAT`)
+      console.log(`${this.name} a ÉCHOUÉ dans son ASSASSINAT, il perd 7 points de vie`)
     }
   
   }
