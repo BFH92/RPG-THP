@@ -1,11 +1,18 @@
 class Wizard extends Character {
   constructor(name, hp = 10, dmg = 2, mana = 200, status) {
     super(name, hp, dmg, mana, status);
-  }   
-  
+  }
+
   fireball(victim) {
-    victim.takeDamage(7);
-    this.mana = this.mana - 25;
+    if (this.mana >= 25) {
+      victim.takeDamage(7);
+      this.mana = this.mana - 25;
+    } else {
+      console.log(
+        "Tu n'as plus de mana pour l'attaque spéciale, tu attaques avec la classique "
+      );
+      this.dealDamage(victim);
+    }
   }
 }
 

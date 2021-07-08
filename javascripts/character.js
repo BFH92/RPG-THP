@@ -27,7 +27,10 @@ class Character {
         He deals him ${this.dmg} damages.
         ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
       )
-    }    
+    }   
+    if(victim.hp <=0){
+      this.mana = this.mana + 20;
+    } 
   }
 
   specialAttack(player, input) {
@@ -38,7 +41,7 @@ class Character {
     } else if (player instanceof Fighter) {
       player.darkVision(players[input]);
     } else if (player instanceof Monk) {
-      player.heal();
+      player.heal(players[input]);
     } else if (player instanceof Paladin) {
       player.healingLighting(players[input]);
     } else if (player instanceof Wizard) {
@@ -75,7 +78,7 @@ class Character {
       var attackInput = prompt(
         `Which attack do you want to do?
         [0] = Classic (damage: ${player.dmg}, mana: 0)
-        [1] = Special (damage: ${player.dmg}, mana: ${player.mana})
+        [1] = Special (mana: ${player.mana})
       `);
 
       if (attackInput == 0) {
