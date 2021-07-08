@@ -68,8 +68,8 @@ class Character {
       ${shuffle.indexOf(shuffle[0])} - ${shuffle[0].name}  
       ${shuffle.indexOf(shuffle[1])} - ${shuffle[1].name}
       ${shuffle.indexOf(shuffle[2])} - ${shuffle[2].name}
-    
-    
+      ${shuffle.indexOf(shuffle[3])} - ${shuffle[3].name}
+      ${shuffle.indexOf(shuffle[4])} - ${shuffle[4].name}
 
     `));
     //TODO: contenu statique
