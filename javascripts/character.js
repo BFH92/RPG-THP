@@ -75,7 +75,7 @@ class Character {
       var attackInput = prompt(
         `Which attack do you want to do?
         [0] = Classic (damage: ${player.dmg}, mana: 0)
-        [1] = Special (damage: ${player.dmg}, mana: ${player.mana})
+        [1] = Special (mana: ${player.mana})
       `);
 
       if (attackInput == 0) {
