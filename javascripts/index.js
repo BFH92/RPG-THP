@@ -1,6 +1,3 @@
-
-
-
 const grace  = new Fighter("Grace");
 const ulder  = new Wizard("Ulder");
 const carl   = new Assassin("Carl");

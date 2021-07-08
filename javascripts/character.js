@@ -54,18 +54,6 @@ class Character {
   }
 
   attackOf(player) {
-    // console.log(`${player.name} joue`);
-    // console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme input par le nom du joueur
-    var playersName =[]
-    players.map((p)=> 
-        {
-          if(p.name != player.name) {
-          playersName.push(p.name)
-          }
-        } 
-        
-        )
-
     var input = Number(prompt(
       `${(player.name).toUpperCase()}: wich player do you want to attack?
       [${shuffle.indexOf(shuffle[0])}] = ${(shuffle[0].name).toUpperCase()}  
@@ -78,8 +66,8 @@ class Character {
 
     if (this.validInput(input, player)) {
       var attackInput = prompt(
-        `Which attack do you want to do?
-        [0] = Classic (damage: ${player.dmg}, mana: 0)
+        `Quelle attaque veux-tu faire?
+        [0] = Classique (dégâts: ${player.dmg}, mana: 0)
         [1] = Special (mana restant : ${player.mana})
       `);
 
@@ -94,6 +82,40 @@ class Character {
     }
   }
 
+  automateAttackOf(player) {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    var input = getRandomInt(4);
+    if (this.validAutoInput(input, player)) {
+      var attackInput = getRandomInt(2);
+        if (attackInput == 0) {
+          player.dealDamage(players[input]);
+        } else if (attackInput == 1) {
+          this.specialAttack(player, input);
+        } else {
+          alert("cette attaque n'est pas reconnue");
+          this.automateAttackOf(player);
+        }
+      }
+  }
+  validAutoInput(input, player) {
+    if (players[input] == undefined) {
+      alert("ce joueur n'existe pas..");
+      this.automateAttackOf(player);
+    } else if (input.lenght == 0) {
+      alert("Le numéro de joueur ne peut être vide");
+      this.automateAttackOf(player);
+    } else if (input === players.indexOf(player)) {
+      alert("Le joueur ne peut pas s'attaquer soi-même !");
+      this.automateAttackOf(player);
+    } else if (players[input].hp <= 0) {
+      alert("Le joueur est déjà mort.. ");
+      this.automateAttackOf(player);
+    } else if (players[input]) {
+      return true;
+    }
+  }
   validInput(input, player) {
     if (players[input] == undefined) {
       alert("ce joueur n'existe pas..");
