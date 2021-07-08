@@ -5,7 +5,7 @@ class Fighter extends Character {
   }
 
   darkVision(victim) {
-    if (this.mana >= 40) {
+    if (this.mana >= 20) {
       this.activeDefense = gameNew.turnLeft;
       victim.takeDamage(5);
       this.mana = this.mana - 20;

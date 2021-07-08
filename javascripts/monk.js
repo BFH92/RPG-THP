@@ -8,8 +8,10 @@ class Monk extends Character {
       this.hp = this.hp + 8;
       this.mana = this.mana - 25;
     } else {
-      console.log("Tu n'as plus de mana pour attaquer, tu attaques avec la classique ");
-      this.dealDamage(victim)
+      console.log(
+        "Tu n'as plus de mana pour l'attaque spéciale, tu attaques avec la classique "
+      );
+      this.dealDamage(victim);
     }
   }
 }
