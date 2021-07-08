@@ -17,7 +17,9 @@ class Turn {
 
 
     shuffle.map((player) => {
-      player.attackOf(player);  
+      if (player.hp > 0) {
+        player.attackOf(player); 
+      } 
     });  
   }
 }
