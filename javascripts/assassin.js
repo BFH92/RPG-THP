@@ -11,6 +11,7 @@ class Assassin extends Character {
     this.activeAttack = gameNew.turnLeft-1 ;
     this.target = shuffle.indexOf(victim);
     this.mana = this.mana - 20;
+    console.log(`%c${this.name} prépare un mauvais coup ... `, "color:orange")
   }
 
   benefits(dmg){

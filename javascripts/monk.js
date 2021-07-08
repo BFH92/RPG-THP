@@ -7,6 +7,9 @@ class Monk extends Character {
     if (this.mana >= 25) {
       this.hp = this.hp + 8;
       this.mana = this.mana - 25;
+      console.log(
+        `%c${(this.name).toUpperCase()} reprend des couleurs et remonte à ${this.hp} points de vie.`, "color:green"
+      )
     } else {
       console.log(
         "Tu n'as plus de mana pour l'attaque spéciale, tu attaques avec la classique "

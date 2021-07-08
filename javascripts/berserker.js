@@ -3,9 +3,14 @@ class Berserker extends Character {
     super(name, hp, dmg, mana, status);
   }   
   
-  rage() {
+  rage(victim) {
     this.dmg = this.dmg + 1
     this.takeDamage(1)
+    console.log(
+      `%c${(this.name).toUpperCase()} attaque avec RAAAAAGE ${(victim.name).toUpperCase()}.
+      Il inflige ${this.dmg} points de dégâts.
+      ${(victim.name).toUpperCase()} a maintenant ${victim.hp} points de vie.`, "color:red"
+    )
   }
 }
 

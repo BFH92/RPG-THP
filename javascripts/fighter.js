@@ -9,6 +9,10 @@ class Fighter extends Character {
       this.activeDefense = gameNew.turnLeft;
       victim.takeDamage(5);
       this.mana = this.mana - 20;
+      console.log(
+        `%c${(this.name).toUpperCase()} attaque ${(victim.name).toUpperCase()} avec sa Spéciale et inflige 5 points de dégâts.
+        ${(victim.name).toUpperCase()} a ${victim.hp} points de vie.`, "color:orange"
+      )
     } else {
       console.log(
         "Tu n'as plus de mana pour l'attaque spéciale, tu attaques avec la classique "
@@ -20,7 +24,9 @@ class Fighter extends Character {
   benefits(dmg) {
     if (gameNew.turnLeft == this.activeDefense) {
       this.takeDamage(dmg - 2);
+      
     }
+
   }
 }
 // Le Fighter aura une attaque spéciale Dark Vision, infligeant 5 dégâts.

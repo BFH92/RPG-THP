@@ -20,12 +20,16 @@ class Character {
 
     if(victim.activeDefense == gameNew.turnLeft){
       victim.benefits(this.dmg)
+      console.log(
+        `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
+        ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
+      )
     } else {
       victim.takeDamage(this.dmg);
       console.log(
-        `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
-        He deals him ${this.dmg} damages.
-        ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
+        `%c${(this.name).toUpperCase()} attaque ${(victim.name).toUpperCase()}.
+        Il inflige ${this.dmg} points de dommages.
+        ${(victim.name).toUpperCase()} a maintenant ${victim.hp} points de vie.`, "color:orange"
       )
     }   
     if(victim.hp <=0){
@@ -37,7 +41,7 @@ class Character {
     if (player instanceof Assassin) {
       player.shadowHit(players[input]);
     } else if (player instanceof Berserker) {
-      player.rage();
+      player.rage(players[input]);
     } else if (player instanceof Fighter) {
       player.darkVision(players[input]);
     } else if (player instanceof Monk) {

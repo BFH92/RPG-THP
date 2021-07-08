@@ -8,6 +8,11 @@ class Paladin extends Character {
       victim.takeDamage(4);
       this.hp = this.hp + 5;
       this.mana = this.mana - 40;
+      console.log(
+        `%c${(this.name).toUpperCase()} attaque ${(victim.name).toUpperCase()} avec sa Spéciale et inflige 4 points de dégâts.
+        Il récupère 5 points de vie !
+        ${(victim.name).toUpperCase()} a  ${victim.hp} points de vie.`, "color:orange"
+      )
     } else {
       console.log(
         "Tu n'as plus de mana pour attaquer, tu attaques avec la classique "
