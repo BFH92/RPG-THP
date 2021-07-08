@@ -8,24 +8,27 @@ class Character {
   }
 
   takeDamage(dmgReceived) {
-    this.hp = this.hp - dmgReceived;
+    if (dmgReceived >0){
+      this.hp = this.hp - dmgReceived;
+    }
     if (this.hp <= 0) {
       this.status = "loser";
     }
   }
 
   dealDamage(victim) {
-    victim.takeDamage(this.dmg);
-    // if (victim.hp <= 0) {
-    //   this.mana = this.mana + 20;
-    // }
-    console.log(
-      `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
-      He deals him ${this.dmg} damages.
-      ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
-    )
+    if (victim.activeDefense == gameNew.turnleft) {
+      victim.benefits(this.dmg)
+    } else {
+      victim.takeDamage(this.dmg);
+      console.log(
+        `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
+        He deals him ${this.dmg} damages.
+        ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
+      )
+    }    
   }
-
+  
   specialAttack(player, input) {
     if (player instanceof Assassin) {
       player.shadowHit(players[input]);
@@ -62,8 +65,8 @@ class Character {
       } else if (attackInput == 1) {
         this.specialAttack(player, input);
       } else {
-        console.log("cette attaque n'est pas reconnue");
-        this.validInput(input, player);
+        alert("cette attaque n'est pas reconnue");
+        this.attackOf(player);
       }
     }
   }
