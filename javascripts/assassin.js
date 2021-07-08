@@ -20,10 +20,13 @@ class Assassin extends Character {
   
   attackSpe(victim) {
     console.log(`${this.name} ATTAQUE ${victim.name} EN TRAITRE !`)
+    
+    if(victim.activeDefense == gameNew.turnLeft){
+      victim.benefits(7)
+    }else{
       victim.takeDamage(7);
-      if(victim.activeDefense !=0){
-        victim.benefits()
-      }
+    }
+      
     if (victim.hp >0) {
       this.takeDamage(7);
       console.log(`${this.name} a ÉCHOUÉ dans son ASSASSINAT, il perd 7 points de vie`)
