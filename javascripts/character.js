@@ -17,7 +17,8 @@ class Character {
   }
 
   dealDamage(victim) {
-    if(victim.activeDefense == gameNew.turnleft){
+
+    if(victim.activeDefense == gameNew.turnLeft){
       victim.benefits(this.dmg)
     }else{
       victim.takeDamage(this.dmg);
