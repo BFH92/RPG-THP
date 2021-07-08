@@ -13,8 +13,11 @@ class Game {
         //console.log(` ${player.name} : status => ${player.status}`);
         if (gameNew.turnLeft == player.activeAttack){
         let victim = players[player.target]
-        player.attackSpe(victim)
-        
+          if (player.hp >0){
+            player.attackSpe(victim)
+          } else {
+            console.log(`${player.name} est mort entre temps...`)
+          }
         }
       });
       if (players.filter((player) => player.status == "playing").length > 1) {

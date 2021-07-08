@@ -5,6 +5,7 @@ class Berserker extends Character {
   
   rage(victim) {
     this.dmg = this.dmg + 1
+    victim.takeDamage(this.dmg);
     this.takeDamage(1)
     console.log(
       `%c${(this.name).toUpperCase()} attaque avec RAAAAAGE ${(victim.name).toUpperCase()}.
