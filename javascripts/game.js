@@ -1,5 +1,5 @@
 class Game {
-  constructor(turnLeft = 10) {
+  constructor(turnLeft = 1) {
     this.turnLeft = turnLeft;
   }
 
@@ -11,24 +11,37 @@ class Game {
       if (players.filter((player) => player.status == "playing").length > 1) {
         newTurn.start();
         this.newTurn();
-      } else {
-        var winner = players.filter((player) => {
+        } else {
+        players.filter((player) => {
           if (player.status == "playing") {
             player.status = "winner";
             console.log(`winner :${player.name}`);
           }
-        });
-      }
+          });
+        }
     } else {
+      
       console.log("Game Over");
+        var playerByHp = players.sort((a, b) => {
+          return b.hp - a.hp;
+      });
+      
+      playerByHp.filter((player) => {
+        if (playerByHp.indexOf(player)==0){
+          player.status = "winner"
+          console.log(`winner : ${player.name}`);
+        }else{
+          player.status = "loser"
+        }
+      });
     }
   }
 }
 
-const grace = new Fighter("grace");
-const ulder = new Paladin("ulder");
+const grace = new Monk("grace");
+const ulder = new Monk("ulder");
 const albert = new Paladin("albert");
-const players = [grace, ulder, albert];
+const players = [grace, ulder];
 const gameNew = new Game();
 var shuffle = players.sort(function (a, b) {
   return 0.5 - Math.random();
