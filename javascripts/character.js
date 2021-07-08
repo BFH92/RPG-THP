@@ -19,6 +19,11 @@ class Character {
     // if (victim.hp <= 0) {
     //   this.mana = this.mana + 20;
     // }
+    console.log(
+      `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
+      He deals him ${this.dmg} damages.
+      ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
+    )
   }
 
   specialAttack(player, input) {
