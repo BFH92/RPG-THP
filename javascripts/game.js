@@ -48,16 +48,3 @@ class Game {
   }
 }
 
-const grace = new Fighter("fighter");
-const ulder = new Wizard("wizard");
-const albert = new Assassin("assassin");
-const players = [grace, ulder,albert];
-const gameNew = new Game();
-console.log("%cLet's the game begin!","font-size:20px;font-weight:600;color:blue;");
-var shuffle = players.sort(function (a, b) {
-  return 0.5 - Math.random();
-});
-//var rand = Math.floor(Math.random()*players.length);
-//var playerSelected = players[rand];
-
-gameNew.newTurn();
