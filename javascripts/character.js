@@ -29,7 +29,7 @@ class Character {
     } else if (player instanceof Fighter) {
       player.darkVision(players[input]);
     } else if (player instanceof Monk) {
-      player.heal();
+      player.heal(players[input]);
     } else if (player instanceof Paladin) {
       player.healingLighting(players[input]);
     }
@@ -42,8 +42,8 @@ class Character {
 
     if (this.validInput(input, player)) {
       var attackInput = prompt("quelle attaque veux-tu faire ?");
-      console.log("0 = attaque classique")
-      console.log("1 = attaque spéciale")
+      console.log("0 = attaque classique");
+      console.log("1 = attaque spéciale");
       if (attackInput == 0) {
         player.dealDamage(players[input]);
       } else if (attackInput == 1) {

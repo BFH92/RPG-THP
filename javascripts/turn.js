@@ -4,8 +4,7 @@ class Turn {
     console.log(`Turn number ${10 - gameNew.turnLeft}`);
 
     players.map((player) => {
-      console.log(` ${player.name} : point de vie => ${player.hp}`);
-      console.log(` ${player.name} : status => ${player.status}`);
+      console.log(` ${player.name} : point de vie => ${player.hp}, status => ${player.status}, mana => ${player.mana}`);
     });
 
     shuffle.map((player) => {
