@@ -5,11 +5,22 @@ class Game {
 
   newTurn() {
     this.turnLeft = this.turnLeft - 1;
-
+    
     if (this.turnLeft >= 0) {
       const newTurn = new Turn();
+      players.map((player) => {
+        //console.log(` ${player.name} : point de vie => ${player.hp}`);
+        //console.log(` ${player.name} : status => ${player.status}`);
+        if (gameNew.turnLeft == player.activeAttack){
+        let victim = players[player.target]
+        player.attackSpe(victim)
+        
+        }
+      });
       if (players.filter((player) => player.status == "playing").length > 1) {
+      
         newTurn.start();
+        
         this.newTurn();
       } else {
         players.filter((player) => {

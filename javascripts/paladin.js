@@ -4,7 +4,7 @@ class Paladin extends Character {
   }
   
   healingLighting(victim) {
-    victim.hp = victim.hp - 4;
+    victim.takeDamage(4);
     this.hp = this.hp + 5;
     this.mana = this.mana - 40;
   }
