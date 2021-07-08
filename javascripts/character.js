@@ -63,14 +63,10 @@ class Character {
         )
 
     var input = Number(prompt(
-      `${(player.name).toUpperCase()}: wich player do you want to attack? 
-
-      ${shuffle.indexOf(shuffle[0])} - ${shuffle[0].name}  
-      ${shuffle.indexOf(shuffle[1])} - ${shuffle[1].name}
-      ${shuffle.indexOf(shuffle[2])} - ${shuffle[2].name}
-    
-    
-
+      `${(player.name).toUpperCase()}: wich player do you want to attack?
+      [${shuffle.indexOf(shuffle[0])}] = ${(shuffle[0].name).toUpperCase()}  
+      [${shuffle.indexOf(shuffle[1])}] = ${(shuffle[1].name).toUpperCase()} 
+      [${shuffle.indexOf(shuffle[2])}] = ${(shuffle[2].name).toUpperCase()} 
     `));
     //TODO: contenu statique
 
