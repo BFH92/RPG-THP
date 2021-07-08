@@ -8,14 +8,16 @@ class Character {
   }
 
   takeDamage(dmgReceived) {
-    this.hp = this.hp - dmgReceived;
+    if (dmgReceived >0){
+      this.hp = this.hp - dmgReceived;
+    }
     if (this.hp <= 0) {
       this.status = "loser";
     }
   }
 
   dealDamage(victim) {
-    if(victim.activeDefense !=0){
+    if(victim.activeDefense == gameNew.turnleft){
       victim.benefits(this.dmg)
     }else{
       victim.takeDamage(this.dmg);
