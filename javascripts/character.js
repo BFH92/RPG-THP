@@ -27,7 +27,10 @@ class Character {
         He deals him ${this.dmg} damages.
         ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
       )
-    }    
+    }   
+    if(victim.hp <=0){
+      this.mana = this.mana + 20;
+    } 
   }
 
   specialAttack(player, input) {
