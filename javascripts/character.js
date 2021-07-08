@@ -101,16 +101,12 @@ class Character {
   }
   validAutoInput(input, player) {
     if (players[input] == undefined) {
-      alert("ce joueur n'existe pas..");
       this.automateAttackOf(player);
     } else if (input.lenght == 0) {
-      alert("Le numéro de joueur ne peut être vide");
       this.automateAttackOf(player);
     } else if (input === players.indexOf(player)) {
-      alert("Le joueur ne peut pas s'attaquer soi-même !");
       this.automateAttackOf(player);
     } else if (players[input].hp <= 0) {
-      alert("Le joueur est déjà mort.. ");
       this.automateAttackOf(player);
     } else if (players[input]) {
       return true;
