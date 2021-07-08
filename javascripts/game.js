@@ -5,7 +5,7 @@ class Game {
 
   newTurn() {
     this.turnLeft = this.turnLeft - 1;
-
+    
     if (this.turnLeft >= 0) {
       const newTurn = new Turn();
       if (players.filter((player) => player.status == "playing").length > 1) {
@@ -15,7 +15,7 @@ class Game {
         players.filter((player) => {
           if (player.status == "playing") {
             player.status = "winner";
-            console.log(`winner :${player.name}`);
+            console.log(`%cWinner: ${(player.name).toUpperCase()}!`,"font-size:20px;font-weight:600;color:lime;");
           }
           });
         }
@@ -27,9 +27,9 @@ class Game {
       });
       
       playerByHp.filter((player) => {
-        if (playerByHp.indexOf(player)==0){
+        if (playerByHp.indexOf(player) == 0) {
           player.status = "winner"
-          console.log(`winner : ${player.name}`);
+          console.log(`%cWinner: ${(player.name).toUpperCase()}!`,"font-size:20px;font-weight:600;color:lime;");
         }else{
           player.status = "loser"
         }
@@ -43,6 +43,7 @@ const ulder = new Monk("ulder");
 const albert = new Paladin("albert");
 const players = [grace, ulder,albert];
 const gameNew = new Game();
+console.log("%cLet's the game begin!","font-size:20px;font-weight:600;color:blue;");
 var shuffle = players.sort(function (a, b) {
   return 0.5 - Math.random();
 });
@@ -50,11 +51,3 @@ var shuffle = players.sort(function (a, b) {
 //var playerSelected = players[rand];
 
 gameNew.newTurn();
-
-//const moana = new Monk("moana");
-//const draven = new Berserker();
-//const carl = new Assassin();
-
-console.log(players);
-
-//console.log(gameNew)
