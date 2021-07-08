@@ -8,7 +8,7 @@ class Character {
   }
 
   takeDamage(dmgReceived) {
-    if (dmgReceived >0){
+    if (dmgReceived > 0) {
       this.hp = this.hp - dmgReceived;
     }
     if (this.hp <= 0) {
@@ -20,18 +20,15 @@ class Character {
 
     if(victim.activeDefense == gameNew.turnLeft){
       victim.benefits(this.dmg)
-    }else{
+    } else {
       victim.takeDamage(this.dmg);
-    }
-  
-    
+      console.log(
+        `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
+        He deals him ${this.dmg} damages.
+        ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
+      )
+    }    
   }
-
-
-    
-    // if (victim.hp <= 0) {
-    //   this.mana = this.mana + 20;
-    // }
 
   specialAttack(player, input) {
     if (player instanceof Assassin) {
@@ -44,18 +41,28 @@ class Character {
       player.heal();
     } else if (player instanceof Paladin) {
       player.healingLighting(players[input]);
+    } else if (player instanceof Wizard) {
+      player.fireball(players[input]);
     }
   }
 
   attackOf(player) {
-    console.log(`${player.name} joue`);
-    console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme inout par le nom du joueur
-    var input = Number(prompt("quel joueur veux-tu attaquer ?"));
+    // console.log(`${player.name} joue`);
+    // console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme input par le nom du joueur
+    var input = Number(prompt(
+      `${(player.name).toUpperCase()}: wich player do you want to attack?
+      [0] = XXX
+      [1] = XXX
+      [2] = XXX
+    `));
 
     if (this.validInput(input, player)) {
-      var attackInput = prompt("quelle attaque veux-tu faire ?");
-      console.log("0 = attaque classique")
-      console.log("1 = attaque spéciale")
+      var attackInput = prompt(
+        `Which attack do you want to do?
+        [0] = Classic (damage: ${player.dmg}, mana: 0)
+        [1] = Special (damage: ${player.dmg}, mana: ${player.mana})
+      `);
+
       if (attackInput == 0) {
         player.dealDamage(players[input]);
       } else if (attackInput == 1) {
