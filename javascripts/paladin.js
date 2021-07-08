@@ -2,11 +2,18 @@ class Paladin extends Character {
   constructor(name, hp = 16, dmg = 3, mana = 160, status) {
     super(name, hp, dmg, mana, status);
   }
-  
+
   healingLighting(victim) {
-    victim.takeDamage(4);
-    this.hp = this.hp + 5;
-    this.mana = this.mana - 40;
+    if (this.mana >= 40) {
+      victim.takeDamage(4);
+      this.hp = this.hp + 5;
+      this.mana = this.mana - 40;
+    } else {
+      console.log(
+        "Tu n'as plus de mana pour attaquer, tu attaques avec la classique "
+      );
+      this.dealDamage(victim);
+    }
   }
 }
 

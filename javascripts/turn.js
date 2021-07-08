@@ -13,6 +13,10 @@ class Turn {
       );
     });
 
+    players.map((player) => {
+      console.log(` ${player.name} : point de vie => ${player.hp}, status => ${player.status}, mana => ${player.mana}`);
+    });
+
     shuffle.map((player) => {
       if (player.hp > 0) {
         shuffle.map((player) =>

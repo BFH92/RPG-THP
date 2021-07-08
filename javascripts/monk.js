@@ -3,9 +3,16 @@ class Monk extends Character {
     super(name, hp, dmg, mana, status);
   }
 
-  heal() {
-    this.hp = this.hp + 8;
-    this.mana = this.mana - 25;
+  heal(victim) {
+    if (this.mana >= 25) {
+      this.hp = this.hp + 8;
+      this.mana = this.mana - 25;
+    } else {
+      console.log(
+        "Tu n'as plus de mana pour l'attaque spéciale, tu attaques avec la classique "
+      );
+      this.dealDamage(victim);
+    }
   }
 }
 

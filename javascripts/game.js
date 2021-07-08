@@ -22,7 +22,7 @@ class Game {
         newTurn.start();
         
         this.newTurn();
-        } else {
+      } else {
         players.filter((player) => {
           if (player.status == "playing") {
             player.status = "winner";
@@ -32,10 +32,10 @@ class Game {
         }
     } else {      
       console.log("Game Over");
-        var playerByHp = players.sort((a, b) => {
-          return b.hp - a.hp;
+      var playerByHp = players.sort((a, b) => {
+        return b.hp - a.hp;
       });
-      
+
       playerByHp.filter((player) => {
         if (playerByHp.indexOf(player) == 0) {
           player.status = "winner"
@@ -48,8 +48,8 @@ class Game {
   }
 }
 
-const grace = new Fighter("grace");
-const ulder = new Wizard("Wizard");
+const grace = new Fighter("fighter");
+const ulder = new Wizard("wizard");
 const albert = new Assassin("assassin");
 const players = [grace, ulder,albert];
 const gameNew = new Game();

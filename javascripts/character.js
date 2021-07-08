@@ -41,7 +41,7 @@ class Character {
     } else if (player instanceof Fighter) {
       player.darkVision(players[input]);
     } else if (player instanceof Monk) {
-      player.heal();
+      player.heal(players[input]);
     } else if (player instanceof Paladin) {
       player.healingLighting(players[input]);
     } else if (player instanceof Wizard) {
