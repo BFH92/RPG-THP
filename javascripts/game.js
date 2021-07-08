@@ -1,5 +1,5 @@
 class Game {
-  constructor(turnLeft = 1) {
+  constructor(turnLeft = 10) {
     this.turnLeft = turnLeft;
   }
 
@@ -41,7 +41,7 @@ class Game {
 const grace = new Monk("grace");
 const ulder = new Monk("ulder");
 const albert = new Paladin("albert");
-const players = [grace, ulder];
+const players = [grace, ulder,albert];
 const gameNew = new Game();
 var shuffle = players.sort(function (a, b) {
   return 0.5 - Math.random();
