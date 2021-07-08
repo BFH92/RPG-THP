@@ -5,6 +5,7 @@ class Turn {
     players.map(player => {
       console.log(
         `%c${(player.name).toUpperCase()}:
+        Class:  ${player.constructor.name}
         Health: ${player.hp},
         Damage: ${player.dmg},
         Mana:   ${player.mana},
