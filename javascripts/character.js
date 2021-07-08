@@ -8,20 +8,25 @@ class Character {
   }
 
   takeDamage(dmgReceived) {
-    this.hp = this.hp - dmgReceived;
+    if (dmgReceived > 0) {
+      this.hp = this.hp - dmgReceived;
+    }
     if (this.hp <= 0) {
       this.status = "loser";
     }
   }
 
   dealDamage(victim) {
-    if(victim.activeDefense !=0){
+    if (victim.activeDefense == gameNew.turnleft) {
       victim.benefits(this.dmg)
-    }else{
+    } else {
       victim.takeDamage(this.dmg);
-    }
-  
-    
+      console.log(
+        `%c${(this.name).toUpperCase()} is attacking ${(victim.name).toUpperCase()}.
+        He deals him ${this.dmg} damages.
+        ${(victim.name).toUpperCase()} got ${victim.hp} lifepoints left.`, "color:orange"
+      )
+    }    
   }
 
   specialAttack(player, input) {
@@ -35,6 +40,8 @@ class Character {
       player.heal();
     } else if (player instanceof Paladin) {
       player.healingLighting(players[input]);
+    } else if (player instanceof Wizard) {
+      player.fireball(players[input]);
     }
   }
 
