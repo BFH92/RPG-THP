@@ -49,18 +49,33 @@ class Character {
   attackOf(player) {
     // console.log(`${player.name} joue`);
     // console.log(players.indexOf(player)); //FIXME: voir comment remplacer l'index du joueur comme input par le nom du joueur
+    var playersName =[]
+    players.map((p)=> 
+        {
+          if(p.name != player.name) {
+          playersName.push(p.name)
+          }
+        } 
+        
+        )
+
     var input = Number(prompt(
-      `${(player.name).toUpperCase()}: wich player do you want to attack?
-      [0] = XXX
-      [1] = XXX
-      [2] = XXX
+      `${(player.name).toUpperCase()}: wich player do you want to attack? 
+
+      ${shuffle.indexOf(shuffle[0])} - ${shuffle[0].name}  
+      ${shuffle.indexOf(shuffle[1])} - ${shuffle[1].name}
+      ${shuffle.indexOf(shuffle[2])} - ${shuffle[2].name}
+    
+    
+
     `));
+    //TODO: contenu statique
 
     if (this.validInput(input, player)) {
       var attackInput = prompt(
         `Which attack do you want to do?
         [0] = Classic (damage: ${player.dmg}, mana: 0)
-        [1] = Special (damage: ${player.dmg}, mana: ${player.mana})
+        [1] = Special (mana: ${player.mana})
       `);
 
       if (attackInput == 0) {
